@@ -20,8 +20,8 @@ server.js
 **Clone repo & masuk ke folder**
 
 ```bash
- git clone https://github.com/yudha-Dlesmana/inventory_manajement_FE.git
- cd inventory_manajement_FE
+ git clone https://github.com/yudha-Dlesmana/inventory_manajement_BE.git
+ cd inventory_manajement_BE
 ```
 
 **Install dependensi**
