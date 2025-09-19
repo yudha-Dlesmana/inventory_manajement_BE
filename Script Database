@@ -1,0 +1,32 @@
+CREATE TYPE product_category AS ENUM (
+    'Electronics',
+    'Furniture',
+    'Clothing',
+    'Food',
+    'Stationery'
+);
+
+CREATE TABLE products (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    stock INT DEFAULT 0 CHECK (stock >= 0),
+    price NUMERIC(10,2) NOT NULL,
+    category product_category NOT NULL
+);
+
+
+CREATE TABLE entities (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    type VARCHAR(10) NOT NULL CHECK (type IN ('customer','supplier'))
+);
+
+CREATE TABLE transactions (
+    id SERIAL PRIMARY KEY,
+    type VARCHAR(10) NOT NULL CHECK (type IN ('buy','sell')),
+    product_id INT NOT NULL REFERENCES products(id) ON DELETE CASCADE,
+    entity_id INT NOT NULL REFERENCES entities(id) ON DELETE CASCADE,
+    quantity INT NOT NULL CHECK (quantity > 0),
+    total NUMERIC(10,2) NOT NULL,
+    transaction_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
