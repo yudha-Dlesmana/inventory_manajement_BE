@@ -15,7 +15,7 @@ server.js
 
 ---
 
-## ▶️ Cara Menjalankan
+## 🚀 Cara Menjalankan
 
 **Clone repo & masuk ke folder**
 
@@ -24,16 +24,14 @@ server.js
  cd inventory_manajement_FE
 ```
 
-## 🚀 Cara Menjalankan
-
-1. **Install dependensi**
+**Install dependensi**
 
 ```
 npm install
 ```
 
-2. **Konfigurasi database**  
-   buat file .env sesuaikan untuk dengan database server postgres sudah disiapkan
+**Konfigurasi database**  
+ buat file .env sesuaikan untuk dengan database server postgres sudah disiapkan
 
 ```bash
 DB_HOST=...
@@ -45,7 +43,7 @@ DB_NAME=...
 SERVER_PORT=...
 ```
 
-3. **Jalankan server**
+**Jalankan server**
 
 ```bash
 node server.js
